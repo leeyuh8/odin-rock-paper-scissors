@@ -5,11 +5,11 @@ function getComputerChoice() {
     return computerSelection;
 }
 
-console.log(getComputerChoice());
-
+let playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
+console.log(playerSelection);
 
 function oneRound(playerSelection, computerSelection) {
-
+    'You Lose! Paper beats Rock'
 }
 
 
