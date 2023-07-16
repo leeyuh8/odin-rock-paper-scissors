@@ -1,16 +1,25 @@
 let options = ['Rock', 'Paper', 'Scissors'];
-let computerSelection = options[Math.floor(Math.random() * 3)];
-let playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
+let computerSelection;
+let playerSelection;
+let computerDialogue;
+let playerDialogue;
 
 
 function getComputerChoice() { 
-    let computerDialogue = 'Computer: ' + computerSelection;
+    computerSelection = options[Math.floor(Math.random() * 3)];
+    computerDialogue = 'Computer: ' + computerSelection;
     return computerDialogue;
 }
+getComputerChoice();
 console.log(getComputerChoice());
 
 
-let playerDialogue = 'You: ' + playerSelection;
+function getPlayerChoice() {
+    playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
+    playerDialogue = 'You: ' + playerSelection;
+    return playerDialogue;
+}
+getPlayerChoice();
 console.log(playerDialogue);
 
 
@@ -55,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
 console.log(playRound(playerSelection, computerSelection)); 
 
 
-let scorePlayer = 0;
+/* let scorePlayer = 0;
 let scoreComputer = 0;
 function game(playRound) {
     // run game five times
@@ -81,4 +90,4 @@ function game(playRound) {
     //   - computerScore > playerScore, then computer wins!
     //   - playerScore = computerScore, then tie!
 }
-console.log(game(playRound));
+console.log(game(playRound)); */
