@@ -2,14 +2,21 @@ let options = ['Rock', 'Paper', 'Scissors'];
 
 function getComputerChoice() { 
     let computerSelection = options[Math.floor(Math.random() * 3)];
-    return computerSelection;
+    let computerDialogue = 'Computer: ' + computerSelection;
+    return computerDialogue;
 }
+console.log(getComputerChoice());
 
 let playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
-console.log(playerSelection);
+let playerDialogue = 'You: ' + playerSelection;
+console.log(playerDialogue);
 
 function oneRound(playerSelection, computerSelection) {
-    'You Lose! Paper beats Rock'
+    if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        console.log('You win! Paper beats Rock.');
+    } else {
+        console.log('still testing');
+    }
 }
 
 
