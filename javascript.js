@@ -1,13 +1,14 @@
 let options = ['Rock', 'Paper', 'Scissors'];
+let computerSelection = options[Math.floor(Math.random() * 3)];
+let playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
 
 function getComputerChoice() { 
-    let computerSelection = options[Math.floor(Math.random() * 3)];
     let computerDialogue = 'Computer: ' + computerSelection;
     return computerDialogue;
 }
 console.log(getComputerChoice());
 
-let playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
+
 let playerDialogue = 'You: ' + playerSelection;
 console.log(playerDialogue);
 
@@ -18,6 +19,7 @@ function oneRound(playerSelection, computerSelection) {
         console.log('still testing');
     }
 }
+oneRound(playerSelection, computerSelection); 
 
 
 
