@@ -18,41 +18,41 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === 'rock') {
         switch (computerSelection) {
             case 'Rock':
-                console.log('Tie!');
+                return 'Tie!';
                 break;
             case 'Paper':
-                console.log('Computer wins! Paper beats Rock.');
+                return 'Computer wins! Paper beats Rock.';
                 break;
             case 'Scissors':
-                console.log('You win! Rock beats Scissors.');
+                return 'You win! Rock beats Scissors.';
         }
     } else if (playerSelection.toLowerCase() === 'paper') {
         switch (computerSelection) {
             case 'Rock':
-                console.log('You win! Paper beats Rock.');
+                return 'You win! Paper beats Rock.';
                 break;
             case 'Paper':
-                console.log('Tie!');
+                return 'Tie!';
                 break;
             case 'Scissors':
-                console.log('Computer wins! Scissors beats Paper.');
+                return 'Computer wins! Scissors beats Paper.';
         }
     } else if (playerSelection.toLowerCase() === 'scissors') {
         switch (computerSelection) {
             case 'Rock':
-                console.log('Computer wins! Rock beats Scissors.');
+                return 'Computer wins! Rock beats Scissors.';
                 break;
             case 'Paper':
-                console.log('You win! Scissors beats Paper.');
+                return 'You win! Scissors beats Paper.';
                 break;
             case 'Scissors':
-                console.log('Tie!');
+                return 'Tie!';
         }
     } else {
-        console.log('Invalid choice. Please re-enter.')
+        return 'Invalid choice. Please re-enter.';
     }
 }
-playRound(playerSelection, computerSelection); 
+console.log(playRound(playerSelection, computerSelection)); 
 
 
 
