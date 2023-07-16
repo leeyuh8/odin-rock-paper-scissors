@@ -1,5 +1,5 @@
-let choiceComputer = [Rock, Paper, Scissors];
+let options = [Rock, Paper, Scissors];
 
 function getComputerChoice() { 
-
+    let 
 }
