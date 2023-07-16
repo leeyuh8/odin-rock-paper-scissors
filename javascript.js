@@ -15,7 +15,7 @@ console.log(playerDialogue);
 
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 'Rock') {
+    if (playerSelection.toLowerCase() === 'rock') {
         switch (computerSelection) {
             case 'Rock':
                 console.log('Tie!');
@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
             case 'Scissors':
                 console.log('You win! Rock beats Scissors.');
         }
-    } else if (playerSelection === 'Paper') {
+    } else if (playerSelection.toLowerCase() === 'paper') {
         switch (computerSelection) {
             case 'Rock':
                 console.log('You win! Paper beats Rock.');
@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
             case 'Scissors':
                 console.log('Computer wins! Scissors beats Paper.');
         }
-    } else if (playerSelection === 'Scissors') {
+    } else if (playerSelection.toLowerCase() === 'scissors') {
         switch (computerSelection) {
             case 'Rock':
                 console.log('Computer wins! Rock beats Scissors.');
