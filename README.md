@@ -7,4 +7,4 @@ Skills Used:
   - Using Chrome Dev Tools to debug.
 
   Lessons Learned:
-
+  - Declare variables used in multiple functions in the global scope.
