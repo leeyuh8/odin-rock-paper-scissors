@@ -8,19 +8,15 @@ let playerDialogue;
 function getComputerChoice() { 
     computerSelection = options[Math.floor(Math.random() * 3)];
     computerDialogue = 'Computer: ' + computerSelection;
-    return computerDialogue;
+    console.log(computerDialogue);
 }
-getComputerChoice();
-console.log(getComputerChoice());
 
 
 function getPlayerChoice() {
     playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
     playerDialogue = 'You: ' + playerSelection;
-    return playerDialogue;
+    console.log(playerDialogue);
 }
-getPlayerChoice();
-console.log(playerDialogue);
 
 
 function playRound(playerSelection, computerSelection) {
@@ -61,33 +57,44 @@ function playRound(playerSelection, computerSelection) {
         return 'Invalid choice. Please re-enter.';
     }
 }
-console.log(playRound(playerSelection, computerSelection)); 
 
 
-/* let scorePlayer = 0;
+let scorePlayer = 0;
 let scoreComputer = 0;
-function game(playRound) {
-    // run game five times
-    // in each iteration: 
-    //   - get computerSelection
-    //   - get player Selection
-    //   - get result of running playRound
-    //   - store result as a tally to scorePlayer or score Computer
-    for (var i = 0; i < 4; i++) {
-        let result = playRound(playerSelection, computerSelection);
+let result;
+function game() {
+    /* run game five times
+    in each iteration: 
+      - get computerSelection
+      - get player Selection
+      - get result of running playRound
+      - store result as a tally to scorePlayer or score Computer */
+    for (var i = 0; i < 5; i++) {
+        getComputerChoice();
+        getPlayerChoice();
+        
+        result = playRound(playerSelection, computerSelection);
         if (result === 'You win!') {
-            return ++scorePlayer;
+            ++scorePlayer;
         } else if (result === 'Computer wins!') {
-            return ++scoreComputer;
+            ++scoreComputer;
         } else if (result === 'Tie!') {
-            return ++scorePlayer && ++scoreComputer;
-        }
+            ++scoreComputer && ++scorePlayer;
+        };
+    };
+    console.log(scorePlayer);
+    console.log(scoreComputer);
+
+    /*  compare player score to computer score:
+      - playerScore > computerScore, then player wins!
+      - computerScore > playerScore, then computer wins!
+      - playerScore = computerScore, then tie! */
+    if (scorePlayer > scoreComputer) {
+        console.log('You won :)');
+    } else if (scorePlayer < scoreComputer) {
+        console.log('You lost :(');
+    } else if (scorePlayer === scoreComputer) {
+        console.log('Tie!');
     }
-
-
-    //  compare player score to computer score:
-    //   - playerScore > computerScore, then player wins!
-    //   - computerScore > playerScore, then computer wins!
-    //   - playerScore = computerScore, then tie!
 }
-console.log(game(playRound)); */
+game();
