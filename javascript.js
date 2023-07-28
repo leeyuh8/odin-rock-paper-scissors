@@ -12,14 +12,24 @@ function getComputerChoice() {
 }
 
 
-function getPlayerChoice() {
-    playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
-    playerDialogue = 'You: ' + playerSelection;
-    console.log(playerDialogue);
-}
+// function getPlayerChoice() {
+//     // playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
+//     // playerDialogue = 'You: ' + playerSelection;
+//     // console.log(playerDialogue);
+// }
 
 
 function playRound(playerSelection, computerSelection) {
+    /*  -  store what button option the player clicked
+        - run getComputerChoice
+        - compare player choice and computer choice
+    */
+    playerSelection = this.getAttribute('value');
+    console.log(playerSelection);
+    /* 
+    getPlayerChoice();
+    getComputerChoice();
+    
     if (playerSelection.toLowerCase() === 'rock') {
         switch (computerSelection) {
             case 'Rock':
@@ -56,11 +66,12 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return 'Invalid choice. Please re-enter.';
     }
+    */
 }
 
 
 const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('click', ()=>console.log('clicked')));
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 
 
