@@ -59,16 +59,22 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+const buttons = document.querySelectorAll("button");
+console.log(buttons);
+
+
+
+/*
 let scorePlayer = 0;
 let scoreComputer = 0;
 let result;
 function game() {
-    /* run game five times
-    in each iteration: 
-      - get computerSelection
-      - get player Selection
-      - get result of running playRound
-      - store result as a tally to scorePlayer or score Computer */
+    // run game five times
+    // in each iteration: 
+    //   - get computerSelection
+    //   - get player Selection
+    //   - get result of running playRound
+    //   - store result as a tally to scorePlayer or score Computer
     for (var i = 0; i < 5; i++) {
         getComputerChoice();
         getPlayerChoice();
@@ -85,10 +91,10 @@ function game() {
     console.log(scorePlayer);
     console.log(scoreComputer);
 
-    /*  compare player score to computer score:
-      - playerScore > computerScore, then player wins!
-      - computerScore > playerScore, then computer wins!
-      - playerScore = computerScore, then tie! */
+    // compare player score to computer score:
+    //   - playerScore > computerScore, then player wins!
+    //   - computerScore > playerScore, then computer wins!
+    //   - playerScore = computerScore, then tie!
     if (scorePlayer > scoreComputer) {
         console.log('You won :)');
     } else if (scorePlayer < scoreComputer) {
@@ -98,3 +104,4 @@ function game() {
     }
 }
 game();
+*/
