@@ -5,20 +5,15 @@ let computerDialogue;
 const div = document.querySelector('div');
 
 
-function getComputerChoice() { 
-    computerSelection = options[Math.floor(Math.random() * 3)];
-    computerDialogue = 'Computer: ' + computerSelection;
-    console.log(computerDialogue);
-}
-
 function playRound(playerSelection, computerSelection) {
     /*  - store what button option the player clicked
-        - run getComputerChoice
+        - get computerSelection
         - compare player choice and computer choice
+        - output result of round to div
     */
     playerSelection = this.getAttribute('value');
     console.log(playerSelection);
-
+    
     computerSelection = options[Math.floor(Math.random() * 3)];
     console.log(computerSelection);
     
