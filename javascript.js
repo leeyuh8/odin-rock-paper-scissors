@@ -20,20 +20,18 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
-    /*  -  store what button option the player clicked
+    /*  - store what button option the player clicked
         - run getComputerChoice
         - compare player choice and computer choice
     */
     playerSelection = this.getAttribute('value');
     console.log(playerSelection);
-    /* 
-    getPlayerChoice();
     getComputerChoice();
     
     if (playerSelection.toLowerCase() === 'rock') {
         switch (computerSelection) {
             case 'Rock':
-                return 'Tie!';
+                console.log('Tie!');
                 break;
             case 'Paper':
                 return 'Computer wins!';
@@ -66,7 +64,6 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return 'Invalid choice. Please re-enter.';
     }
-    */
 }
 
 
