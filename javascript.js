@@ -2,6 +2,7 @@ let options = ['Rock', 'Paper', 'Scissors'];
 let computerSelection;
 let playerSelection;
 let computerDialogue;
+const div = document.querySelector('div');
 
 
 function getComputerChoice() { 
@@ -24,35 +25,35 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         switch (computerSelection) {
             case 'Rock':
-                console.log('Tie!');
+                div.textContent = 'Tie!';
                 break;
             case 'Paper':
-                console.log('Computer wins!');
+                div.textContent = 'Computer wins!';
                 break;
             case 'Scissors':
-                console.log('You win!');
+                div.textContent = 'You win!';
         }
     } else if (playerSelection === 'paper') {
         switch (computerSelection) {
             case 'Rock':
-                console.log('You win!');
+                div.textContent = 'You win!';
                 break;
             case 'Paper':
-                console.log('Tie!');
+                div.textContent = 'Tie!';
                 break;
             case 'Scissors':
-                console.log('Computer wins!');
+                div.textContent = 'Computer wins!';
         }
     } else if (playerSelection === 'scissors') {
         switch (computerSelection) {
             case 'Rock':
-                console.log('Computer wins!');
+                div.textContent = 'Computer wins!';
                 break;
             case 'Paper':
-                console.log('You win!');
+                div.textContent = 'You win!';
                 break;
             case 'Scissors':
-                console.log('Tie!');
+                div.textContent = 'Tie!';
         }
     }
 }
