@@ -1,8 +1,7 @@
 let options = ['Rock', 'Paper', 'Scissors'];
 let computerSelection;
 let playerSelection;
-let computerDialogue;
-const div = document.querySelector('div');
+const divResult = document.querySelector('div.result');
 
 
 function playRound(playerSelection, computerSelection) {
@@ -20,42 +19,55 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
         switch (computerSelection) {
             case 'Rock':
-                div.textContent = 'Tie!';
+                divResult.textContent = 'Tie!';
                 break;
             case 'Paper':
-                div.textContent = 'Computer wins!';
+                divResult.textContent = 'Computer wins!';
                 break;
             case 'Scissors':
-                div.textContent = 'You win!';
+                divResult.textContent = 'You win!';
         }
     } else if (playerSelection === 'paper') {
         switch (computerSelection) {
             case 'Rock':
-                div.textContent = 'You win!';
+                divResult.textContent = 'You win!';
                 break;
             case 'Paper':
-                div.textContent = 'Tie!';
+                divResult.textContent = 'Tie!';
                 break;
             case 'Scissors':
-                div.textContent = 'Computer wins!';
+                divResult.textContent = 'Computer wins!';
         }
     } else if (playerSelection === 'scissors') {
         switch (computerSelection) {
             case 'Rock':
-                div.textContent = 'Computer wins!';
+                divResult.textContent = 'Computer wins!';
                 break;
             case 'Paper':
-                div.textContent = 'You win!';
+                divResult.textContent = 'You win!';
                 break;
             case 'Scissors':
-                div.textContent = 'Tie!';
+                divResult.textContent = 'Tie!';
         }
     }
+
+/*  - display score if each player in corresponding span
+        - every time a round plays, need to increment the winners score
+    - once a player reached 5 points, display winning player
+
+    read the 
+*/
+
 }
+
+
+
+
 
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
+
 
 
 
