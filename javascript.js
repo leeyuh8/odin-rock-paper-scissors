@@ -2,7 +2,6 @@ let options = ['Rock', 'Paper', 'Scissors'];
 let computerSelection;
 let playerSelection;
 let computerDialogue;
-let playerDialogue;
 
 
 function getComputerChoice() { 
@@ -11,14 +10,6 @@ function getComputerChoice() {
     console.log(computerDialogue);
 }
 
-
-// function getPlayerChoice() {
-//     // playerSelection = prompt('Make your choice:', 'Rock, Paper, or Scissors');
-//     // playerDialogue = 'You: ' + playerSelection;
-//     // console.log(playerDialogue);
-// }
-
-
 function playRound(playerSelection, computerSelection) {
     /*  - store what button option the player clicked
         - run getComputerChoice
@@ -26,43 +17,43 @@ function playRound(playerSelection, computerSelection) {
     */
     playerSelection = this.getAttribute('value');
     console.log(playerSelection);
-    getComputerChoice();
+
+    computerSelection = options[Math.floor(Math.random() * 3)];
+    console.log(computerSelection);
     
-    if (playerSelection.toLowerCase() === 'rock') {
+    if (playerSelection === 'rock') {
         switch (computerSelection) {
             case 'Rock':
                 console.log('Tie!');
                 break;
             case 'Paper':
-                return 'Computer wins!';
+                console.log('Computer wins!');
                 break;
             case 'Scissors':
-                return 'You win!';
+                console.log('You win!');
         }
-    } else if (playerSelection.toLowerCase() === 'paper') {
+    } else if (playerSelection === 'paper') {
         switch (computerSelection) {
             case 'Rock':
-                return 'You win!';
+                console.log('You win!');
                 break;
             case 'Paper':
-                return 'Tie!';
+                console.log('Tie!');
                 break;
             case 'Scissors':
-                return 'Computer wins!';
+                console.log('Computer wins!');
         }
-    } else if (playerSelection.toLowerCase() === 'scissors') {
+    } else if (playerSelection === 'scissors') {
         switch (computerSelection) {
             case 'Rock':
-                return 'Computer wins!';
+                console.log('Computer wins!');
                 break;
             case 'Paper':
-                return 'You win!';
+                console.log('You win!');
                 break;
             case 'Scissors':
-                return 'Tie!';
+                console.log('Tie!');
         }
-    } else {
-        return 'Invalid choice. Please re-enter.';
     }
 }
 
