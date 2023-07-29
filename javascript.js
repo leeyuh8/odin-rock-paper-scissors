@@ -6,7 +6,7 @@ const divParent = document.querySelector('div.parent');
 const divResult = document.querySelector('div.result');
 const spanPlayerScore = document.querySelector('span.player-score');
 const spanComputerScore = document.querySelector('span.computer-score')
-
+const h1Winner = document.querySelector('h1.winner');
 
 
 
@@ -68,79 +68,22 @@ function playRound(playerSelection, computerSelection) {
     } 
 
 /* check to see if player or computer score is 5
-        -if player score is 5, run displayWinner() so that divWinner
+        -if player score is 5, h1Winner
         states 'You are the winner!'
-        -if computer score is 5, run displayWinner() so that divWinner
+        -if computer score is 5, h1Winner
         states states the 'Computer wins!'
 
         -must first check for a tie, if so, return 'Tie!'
 */
     if (spanPlayerScore.textContent === '5' && spanComputerScore.textContent === '5') {
-        console.log('works');
+        h1Winner.textContent = 'Tie';
     } else if (spanPlayerScore.textContent === '5' ) {
-        console.log('works');
+        h1Winner.textContent = 'You win!';
     } else if (spanComputerScore.textContent === '5') {
-        console.log('works');
+        h1Winner.textContent = 'Computer wins!';
     }
-
-
-}
-
-
-// function to remove span.player-score, span.computer-score
-// and div.result, add replaces it with h1.winner 
-function displayWinner() {
-    divParent.textContent = '';
-    const h1Winner = document.createElement('h1');
-    divParent.appendChild(h1Winner);
 }
 
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
-
-displayWinner();
-
-
-
-/*
-let scorePlayer = 0;
-let scoreComputer = 0;
-let result;
-function game() {
-    // run game five times
-    // in each iteration: 
-    //   - get computerSelection
-    //   - get player Selection
-    //   - get result of running playRound
-    //   - store result as a tally to scorePlayer or score Computer
-    for (var i = 0; i < 5; i++) {
-        getComputerChoice();
-        getPlayerChoice();
-        
-        result = playRound(playerSelection, computerSelection);
-        if (result === 'You win!') {
-            ++scorePlayer;
-        } else if (result === 'Computer wins!') {
-            ++scoreComputer;
-        } else if (result === 'Tie!') {
-            ++scoreComputer && ++scorePlayer;
-        };
-    };
-    console.log(scorePlayer);
-    console.log(scoreComputer);
-
-    // compare player score to computer score:
-    //   - playerScore > computerScore, then player wins!
-    //   - computerScore > playerScore, then computer wins!
-    //   - playerScore = computerScore, then tie!
-    if (scorePlayer > scoreComputer) {
-        console.log('You won :)');
-    } else if (scorePlayer < scoreComputer) {
-        console.log('You lost :(');
-    } else if (scorePlayer === scoreComputer) {
-        console.log('Tie!');
-    }
-}
-game();
-*/
