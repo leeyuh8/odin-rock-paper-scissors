@@ -1,7 +1,11 @@
 let options = ['Rock', 'Paper', 'Scissors'];
 let computerSelection;
 let playerSelection;
+
 const divResult = document.querySelector('div.result');
+const spanPlayerScore = document.querySelector('span.player-score');
+const spanComputerScore = document.querySelector('span.computer-score')
+
 
 
 function playRound(playerSelection, computerSelection) {
@@ -55,8 +59,17 @@ function playRound(playerSelection, computerSelection) {
         - every time a round plays, need to increment the winners score
     - once a player reached 5 points, display winning player
 
-    read the 
+    read the result in div.result.
+        - if it says 'Computer wins', increment the score in span.computer-score
+        - if it says 'You win', increment the score in span.player-score
+
 */
+
+    if (divResult.textContent === 'You win!') {
+        ++spanPlayerScore.textContent;
+    } else if (divResult.textContent === 'Computer wins!') {
+        ++spanComputerScore.textContent;
+    } 
 
 }
 
