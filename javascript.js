@@ -7,7 +7,7 @@ const divResult = document.querySelector('div.result');
 const spanPlayerScore = document.querySelector('span.player-score');
 const spanComputerScore = document.querySelector('span.computer-score')
 const h1Winner = document.querySelector('h1.winner');
-
+const buttonReset = document.querySelector('button.reset');
 
 
 function playRound() {
@@ -85,26 +85,24 @@ function playRound() {
     }
 
 /* if h1 winner contains any text, then the game has completed.
-        - display a new reset button under divParent
+        - stop player option buttons from being clicked
         - when reset button clicked, run resetGame function to reset scores.
 */
     if (h1Winner.textContent === 'Tie' 
         || h1Winner.textContent === 'You win!'
         || h1Winner.textContent === 'Computer wins!') {
-            const buttonReset = document.createElement('button');
-            buttonReset.textContent = 'Reset Game';
-            divParent.appendChild(buttonReset);
-            buttonReset.addEventListener('click', resetScore, {once: true});
+            buttons.forEach(button => button.removeEventListener('click', playRound));
+            buttonReset.addEventListener('click', resetScore);
         }
 }
 
-function resetScore() {
+function resetScore(buttonReset) {
+    buttons.forEach(button => button.addEventListener('click', playRound));
+    
     divResult.textContent = '';
     spanPlayerScore.textContent = '';
     spanComputerScore.textContent = '';
     h1Winner.textContent = '';
-
-    divParent.removeChild(buttonReset);
 }
 
 const buttons = document.querySelectorAll('button');
