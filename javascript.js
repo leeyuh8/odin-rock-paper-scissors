@@ -10,50 +10,51 @@ const h1Winner = document.querySelector('h1.winner');
 
 
 
-function playRound(playerSelection, computerSelection) {
-    /*  - store what button option the player clicked
-        - get computerSelection
-        - compare player choice and computer choice
-        - output result of round to div
-    */
+function playRound() {
+/*  - store what button option the player clicked
+    - get computerSelection
+    - compare player choice and computer choice
+    - output result of round to div
+*/
     playerSelection = this.getAttribute('value');
     console.log(playerSelection);
     
     computerSelection = options[Math.floor(Math.random() * 3)];
     console.log(computerSelection);
     
+// Evaluate who gets a point in this round.
     if (playerSelection === 'rock') {
         switch (computerSelection) {
             case 'Rock':
-                divResult.textContent = 'Tie!';
+                divResult.textContent = 'Tie! No points given.';
                 break;
             case 'Paper':
-                divResult.textContent = 'Computer wins!';
+                divResult.textContent = 'Computer gets a point!';
                 break;
             case 'Scissors':
-                divResult.textContent = 'You win!';
+                divResult.textContent = 'You get a point!';
         }
     } else if (playerSelection === 'paper') {
         switch (computerSelection) {
             case 'Rock':
-                divResult.textContent = 'You win!';
+                divResult.textContent = 'You get a point!';
                 break;
             case 'Paper':
-                divResult.textContent = 'Tie!';
+                divResult.textContent = 'Tie! No points given.';
                 break;
             case 'Scissors':
-                divResult.textContent = 'Computer wins!';
+                divResult.textContent = 'Computer gets a point!';
         }
     } else if (playerSelection === 'scissors') {
         switch (computerSelection) {
             case 'Rock':
-                divResult.textContent = 'Computer wins!';
+                divResult.textContent = 'Computer gets a point!';
                 break;
             case 'Paper':
-                divResult.textContent = 'You win!';
+                divResult.textContent = 'You get a point!';
                 break;
             case 'Scissors':
-                divResult.textContent = 'Tie!';
+                divResult.textContent = 'Tie! No points given.';
         }
     }
 
@@ -61,9 +62,9 @@ function playRound(playerSelection, computerSelection) {
         - if it says 'Computer wins', increment the score in span.computer-score
         - if it says 'You win', increment the score in span.player-score
 */
-    if (divResult.textContent === 'You win!') {
+    if (divResult.textContent === 'You get a point!') {
         ++spanPlayerScore.textContent;
-    } else if (divResult.textContent === 'Computer wins!') {
+    } else if (divResult.textContent === 'Computer gets a point!') {
         ++spanComputerScore.textContent;
     } 
 
@@ -82,8 +83,29 @@ function playRound(playerSelection, computerSelection) {
     } else if (spanComputerScore.textContent === '5') {
         h1Winner.textContent = 'Computer wins!';
     }
+
+/* if h1 winner contains any text, then the game has completed.
+        - display a new reset button under divParent
+        - when reset button clicked, run resetGame function to reset scores.
+*/
+    if (h1Winner.textContent === 'Tie' 
+        || h1Winner.textContent === 'You win!'
+        || h1Winner.textContent === 'Computer wins!') {
+            const buttonReset = document.createElement('button');
+            buttonReset.textContent = 'Reset Game';
+            divParent.appendChild(buttonReset);
+            buttonReset.addEventListener('click', resetScore, {once: true});
+        }
 }
 
+function resetScore() {
+    divResult.textContent = '';
+    spanPlayerScore.textContent = '';
+    spanComputerScore.textContent = '';
+    h1Winner.textContent = '';
+
+    divParent.removeChild(buttonReset);
+}
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
