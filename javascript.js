@@ -4,8 +4,8 @@ let playerSelection;
 
 const divParent = document.querySelector('div.parent');
 const divResult = document.querySelector('div.result');
-const spanPlayerScore = document.querySelector('span.player-score');
-const spanComputerScore = document.querySelector('span.computer-score')
+const divPlayerScore = document.querySelector('div.player-score');
+const divComputerScore = document.querySelector('div.computer-score')
 const h1Winner = document.querySelector('h1.winner');
 const buttonReset = document.querySelector('button.reset');
 
@@ -59,13 +59,13 @@ function playRound() {
     }
 
 /*  read the result in div.result.
-        - if it says 'Computer wins', increment the score in span.computer-score
-        - if it says 'You win', increment the score in span.player-score
+        - if it says 'Computer wins', increment the score in div.computer-score
+        - if it says 'You win', increment the score in div.player-score
 */
     if (divResult.textContent === 'You get a point!') {
-        ++spanPlayerScore.textContent;
+        ++divPlayerScore.textContent;
     } else if (divResult.textContent === 'Computer gets a point!') {
-        ++spanComputerScore.textContent;
+        ++divComputerScore.textContent;
     } 
 
 /* check to see if player or computer score is 5
@@ -76,11 +76,11 @@ function playRound() {
 
         -must first check for a tie, if so, return 'Tie!'
 */
-    if (spanPlayerScore.textContent === '5' && spanComputerScore.textContent === '5') {
+    if (divPlayerScore.textContent === '5' && divComputerScore.textContent === '5') {
         h1Winner.textContent = 'Tie';
-    } else if (spanPlayerScore.textContent === '5' ) {
+    } else if (divPlayerScore.textContent === '5' ) {
         h1Winner.textContent = 'You win!';
-    } else if (spanComputerScore.textContent === '5') {
+    } else if (divComputerScore.textContent === '5') {
         h1Winner.textContent = 'Computer wins!';
     }
 
@@ -100,8 +100,8 @@ function resetScore(buttonReset) {
     buttons.forEach(button => button.addEventListener('click', playRound));
     
     divResult.textContent = '';
-    spanPlayerScore.textContent = '';
-    spanComputerScore.textContent = '';
+    divPlayerScore.textContent = '';
+    divComputerScore.textContent = '';
     h1Winner.textContent = '';
 }
 
