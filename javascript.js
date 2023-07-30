@@ -12,6 +12,11 @@ const roundResult = document.querySelector('.round-result');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
+const optionsDiv = document.querySelector('.options');
+const announceFinalWinner = document.createElement('h1');
+const playAgainButton = document.createElement('button');
+    playAgainButton.textContent = "Play Again";
+
 function getPlayerSelection (button) {
     playerSelection = button.getAttribute('value');
     console.log(playerSelection);
@@ -77,27 +82,34 @@ function displayWinnerOfRound () {
     } 
 }
 
-function playRound() {
-    getPlayerSelection(this);
-    getComputerSelection();
-
-    displayWinnerOfRound();
-    return;
-/* check to see if player or computer score is 5
-        -if player score is 5, h1Winner
-        states 'You are the winner!'
-        -if computer score is 5, h1Winner
-        states states the 'Computer wins!'
-
-        -must first check for a tie, if so, return 'Tie!'
-*/
-    if (divPlayerScore.textContent === '5' && divComputerScore.textContent === '5') {
-        h1Winner.textContent = 'Tie';
-    } else if (divPlayerScore.textContent === '5' ) {
-        h1Winner.textContent = 'You win!';
-    } else if (divComputerScore.textContent === '5') {
-        h1Winner.textContent = 'Computer wins!';
+function finalWinner () {
+    if (playerScore.textContent === '5' && computerScore.textContent === '5') {
+        announceFinalWinner.textContent = 'Tie';
+    } else if (playerScore.textContent === '5' ) {
+        announceFinalWinner.innerHTML = 'You win! <img src="./images/happy.png">';
+    } else if (computerScore.textContent === '5') {
+        announceFinalWinner.innerHTML = 'Computer wins! <img src="./images/sad.png">';
+    } else {
+        return;
     }
+
+    roundResult.textContent = "";
+    optionsDiv.textContent = "";
+    optionsDiv.appendChild(announceFinalWinner);
+    optionsDiv.appendChild(playAgainButton);
+
+    return;
+   
+    
+    /* check to see if player or computer score is 5
+        - remove text content of .options
+        - create new div with .game-end-winner that contains:
+            - h1 tag to announce the overall winner
+            - 'play again' button
+        - append new div to .options
+
+*/
+   
 
 /* if h1 winner contains any text, then the game has completed.
         - stop player option buttons from being clicked
@@ -111,12 +123,21 @@ function playRound() {
         }
 }
 
+function playRound() {
+    getPlayerSelection(this);
+    getComputerSelection();
+
+    displayWinnerOfRound();
+    
+    finalWinner();
+}
+
 function resetScore(buttonReset) {
     buttons.forEach(button => button.addEventListener('click', playRound));
     
     roundResult.textContent = '';
-    divPlayerScore.textContent = '';
-    divComputerScore.textContent = '';
+    playerScore.textContent = '';
+    computerScore.textContent = '';
     h1Winner.textContent = '';
 }
 
