@@ -15,13 +15,14 @@ body {
 
 header {
     display: flex;
-    height: 100px;
+    height: auto;
     flex-direction: column;
     justify-content: center;
     font-size: 60px;
     color: #f79256;
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 img {
