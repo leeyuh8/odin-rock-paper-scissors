@@ -17,6 +17,7 @@ const announceFinalWinner = document.createElement('h1');
 const playAgainButton = document.createElement('button');
     playAgainButton.textContent = "Play Again";
 
+
 function getPlayerSelection (button) {
     playerSelection = button.getAttribute('value');
     console.log(playerSelection);
@@ -97,8 +98,8 @@ function finalWinner () {
     optionsDiv.textContent = "";
     optionsDiv.appendChild(announceFinalWinner);
     optionsDiv.appendChild(playAgainButton);
-
-    return;
+ return;
+   
    
     
     /* check to see if player or computer score is 5
