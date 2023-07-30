@@ -21,7 +21,7 @@ header {
     font-size: 60px;
     color: #f79256;
     font-weight: bold;
-    margin-bottom: 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -35,12 +35,12 @@ img {
 /* SCOREBOARD */
 .scoreboard {
     display: flex;
-    width: 400px;
     justify-content: space-between;
     color:#f79256;
     font-weight: bold;
     font-size: 30px;
     padding: 25px;
+    gap: 50px;
 }
 
 .player, .dash, .computer{
