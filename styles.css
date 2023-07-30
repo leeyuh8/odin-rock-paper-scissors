@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: solid 1px darkred;
+    /* border: solid 1px darkred; */
     font-family: 'Times New Roman', sans-serif;
 }
 
@@ -45,12 +45,12 @@ img {
 .player, .dash, .computer{
     display: flex;
     flex-direction: column;
-    height: 160px;
+    height: 140px;
     justify-content: space-between;
 }
 
 .player-icon img, .computer-icon img {
-    width: 100px;
+    width: 80px;
 }
 
 .player-score, .computer-score {
@@ -66,10 +66,23 @@ img {
 
 
 
+/* ROUND RESULT */
+.round-result {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f79256;
+    /* font-weight: bold; */
+    font-size: 25px;
+}
+
+
 /* OPTIONS */
 .options {
     display: flex;
-    padding: 50px;
+    padding-top: 30px;
+    padding-bottom: 40px;
     gap: 60px;
     flex-wrap: wrap;
     flex: 1;
