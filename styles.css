@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: solid 1px darkred; */
+    border: solid 1px darkred;
     font-family: 'Times New Roman', sans-serif;
 }
 
@@ -39,7 +39,7 @@ img {
     color:#f79256;
     font-weight: bold;
     font-size: 30px;
-    padding: 20px;
+    padding: 25px;
 }
 
 .player, .dash, .computer{
@@ -97,6 +97,6 @@ button img {
 
 /* FOOTER */
 footer { 
-   padding-bottom: 10px;
+   padding-bottom: 5px;
    color:#06203f;
 }
