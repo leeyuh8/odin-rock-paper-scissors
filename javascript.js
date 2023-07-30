@@ -1,73 +1,88 @@
-let options = ['Rock', 'Paper', 'Scissors'];
-let computerSelection;
+let options = ['rock', 'paper', 'scissors'];
 let playerSelection;
+let computerSelection;
 
-const divParent = document.querySelector('div.parent');
-const divResult = document.querySelector('div.result');
-const divPlayerScore = document.querySelector('div.player-score');
-const divComputerScore = document.querySelector('div.computer-score')
-const h1Winner = document.querySelector('h1.winner');
-const buttonReset = document.querySelector('button.reset');
+const playerIcon = document.querySelector('.player-icon');
+const playerIconImg = document.querySelector('.player-icon > img');
 
+const computerIcon = document.querySelector('.computer-icon');
+const computerIconImg = document.querySelector('.computer-icon > img');
 
-function playRound() {
-/*  - store what button option the player clicked
-    - get computerSelection
-    - compare player choice and computer choice
-    - output result of round to div
-*/
-    playerSelection = this.getAttribute('value');
+const roundResult = document.querySelector('.round-result');
+const playerScore = document.querySelector('.player-score');
+const computerScore = document.querySelector('.computer-score');
+
+function getPlayerSelection (button) {
+    playerSelection = button.getAttribute('value');
     console.log(playerSelection);
-    
+
+    playerIcon.textContent = "";
+
+    const playerIconChoice = document.createElement('img');
+    playerIconChoice.setAttribute('src', `./images/${playerSelection}.png`)
+    playerIcon.appendChild(playerIconChoice);
+}
+
+function getComputerSelection () {
     computerSelection = options[Math.floor(Math.random() * 3)];
     console.log(computerSelection);
-    
-// Evaluate who gets a point in this round.
+
+    computerIcon.textContent = "";
+
+    const computerIconChoice = document.createElement('img');
+    computerIconChoice.setAttribute('src', `./images/${computerSelection}.png`)
+    computerIcon.appendChild(computerIconChoice);
+}
+
+function displayWinnerOfRound () {
     if (playerSelection === 'rock') {
         switch (computerSelection) {
-            case 'Rock':
-                divResult.textContent = 'Tie! No points given.';
+            case 'rock':
+                roundResult.textContent = 'Tie! No points given.';
                 break;
-            case 'Paper':
-                divResult.textContent = 'Computer gets a point!';
+            case 'paper':
+                roundResult.textContent = 'Computer gets a point!';
                 break;
-            case 'Scissors':
-                divResult.textContent = 'You get a point!';
+            case 'scissors':
+                roundResult.textContent = 'You get a point!';
         }
     } else if (playerSelection === 'paper') {
         switch (computerSelection) {
-            case 'Rock':
-                divResult.textContent = 'You get a point!';
+            case 'rock':
+                roundResult.textContent = 'You get a point!';
                 break;
-            case 'Paper':
-                divResult.textContent = 'Tie! No points given.';
+            case 'paper':
+                roundResult.textContent = 'Tie! No points given.';
                 break;
-            case 'Scissors':
-                divResult.textContent = 'Computer gets a point!';
+            case 'scissors':
+                roundResult.textContent = 'Computer gets a point!';
         }
     } else if (playerSelection === 'scissors') {
         switch (computerSelection) {
-            case 'Rock':
-                divResult.textContent = 'Computer gets a point!';
+            case 'rock':
+                roundResult.textContent = 'Computer gets a point!';
                 break;
-            case 'Paper':
-                divResult.textContent = 'You get a point!';
+            case 'paper':
+                roundResult.textContent = 'You get a point!';
                 break;
-            case 'Scissors':
-                divResult.textContent = 'Tie! No points given.';
+            case 'scissors':
+                roundResult.textContent = 'Tie! No points given.';
         }
     }
 
-/*  read the result in div.result.
-        - if it says 'Computer wins', increment the score in div.computer-score
-        - if it says 'You win', increment the score in div.player-score
-*/
-    if (divResult.textContent === 'You get a point!') {
-        ++divPlayerScore.textContent;
-    } else if (divResult.textContent === 'Computer gets a point!') {
-        ++divComputerScore.textContent;
+    if (roundResult.textContent === 'You get a point!') {
+        ++playerScore.textContent;
+    } else if (roundResult.textContent === 'Computer gets a point!') {
+        ++computerScore.textContent;
     } 
+}
 
+function playRound() {
+    getPlayerSelection(this);
+    getComputerSelection();
+
+    displayWinnerOfRound();
+    return;
 /* check to see if player or computer score is 5
         -if player score is 5, h1Winner
         states 'You are the winner!'
@@ -99,11 +114,11 @@ function playRound() {
 function resetScore(buttonReset) {
     buttons.forEach(button => button.addEventListener('click', playRound));
     
-    divResult.textContent = '';
+    roundResult.textContent = '';
     divPlayerScore.textContent = '';
     divComputerScore.textContent = '';
     h1Winner.textContent = '';
 }
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.options > button');
 buttons.forEach(button => button.addEventListener('click', playRound));
