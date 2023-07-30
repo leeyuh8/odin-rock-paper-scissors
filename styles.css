@@ -27,3 +27,8 @@ img {
     height: auto;
     width: 250px;
 }
+
+.scoreboard .icons {
+    display: flex;
+    
+}
