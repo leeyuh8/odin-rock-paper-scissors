@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: solid 1px darkred;
+    /* border: solid 1px darkred; */
     font-family: 'Times New Roman', sans-serif;
 }
 
@@ -91,4 +91,12 @@ img {
 button img {
     width: 150px;
     background: transparent;
+}
+
+
+
+/* FOOTER */
+footer { 
+   padding-bottom: 10px;
+   color:#06203f;
 }
