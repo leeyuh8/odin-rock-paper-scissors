@@ -21,6 +21,7 @@ header {
     font-size: 60px;
     color: #f79256;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 img {
@@ -37,17 +38,19 @@ img {
     justify-content: space-between;
     color:#f79256;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
     padding: 20px;
 }
 
 .player, .dash, .computer{
     display: flex;
     flex-direction: column;
+    height: 160px;
+    justify-content: space-between;
 }
 
 .player-icon img, .computer-icon img {
-    width: 130px;
+    width: 100px;
 }
 
 .player-score, .computer-score {
@@ -61,3 +64,31 @@ img {
     justify-content: flex-end;
 }
 
+
+
+/* OPTIONS */
+.options {
+    display: flex;
+    width: 850px;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.options button {
+    background-color: #fbd1a2;
+    padding: 30px;
+    border: none;
+    border-radius: 20px;
+    opacity: 0.85;
+}
+
+.options button:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 10px #0f335e;
+}
+
+button img {
+    width: 150px;
+    background: transparent;
+}
