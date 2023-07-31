@@ -14,8 +14,11 @@ const computerScore = document.querySelector('.computer-score');
 
 const optionsDiv = document.querySelector('.options');
 const announceFinalWinner = document.createElement('h1');
+    announceFinalWinner.setAttribute('class', 'announce-final-winner');
 const playAgainButton = document.createElement('button');
     playAgainButton.textContent = "Play Again";
+    playAgainButton.setAttribute('id', 'play-again-button');
+
 
 
 function getPlayerSelection (button) {

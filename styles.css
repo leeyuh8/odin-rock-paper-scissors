@@ -1,5 +1,5 @@
 * {
-    background-color: #1d4e89;
+    background-color: #092c55;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -116,5 +116,32 @@ button img {
 /* FOOTER */
 footer { 
    padding-bottom: 5px;
-   color:#06203f;
+   color:#456994;
+}
+
+
+
+/* END OF GAME CARD STYLES */
+.announce-final-winner {
+    color:rgb(244, 248, 255);
+    font-size: 60px;
+    font-weight: bold;
+    padding: 30px;
+    text-align: center;
+}
+
+.announce-final-winner img {
+    width: 40px;
+    height: auto;
+    background: transparent;
+    
+}
+
+#play-again-button {
+    background-color:#f79256;
+    font-size: 20px;
+    padding: 10px 20px;
+    height: 40px;
+    border-radius: 12px;
+    align-self: center;
 }
