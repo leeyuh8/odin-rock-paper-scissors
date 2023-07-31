@@ -18,10 +18,27 @@ const announceFinalWinner = document.createElement('h1');
 const playAgainButton = document.createElement('button');
     playAgainButton.textContent = "Play Again";
     playAgainButton.setAttribute('id', 'play-again-button');
-    // playAgainButton.addEventListener('click', playButtonSound);
+    // playAgainButton.addEventListener('click', playButtonAudio);
     playAgainButton.addEventListener('click', () => window.location.reload());
+ 
     
+function playButtonAudio () {
+    const buttonAudio = document.getElementById("click-button-audio");
+    buttonAudio.currentTime = 0;
+    buttonAudio.play();
+}
 
+function playWinAudio () {
+    const winAudio = document.getElementById("win-audio");
+    winAudio.currentTime = 0;
+    winAudio.play();
+}
+
+function playLoseAudio () {
+    const loseAudio = document.getElementById("lose-audio");
+    loseAudio.currentTime = 0;
+    loseAudio.play();
+}
 
 function getPlayerSelection (button) {
     playerSelection = button.getAttribute('value');
@@ -91,11 +108,12 @@ function displayWinnerOfRound () {
 function finalWinner () {
     if (playerScore.textContent === '5' && computerScore.textContent === '5') {
         announceFinalWinner.textContent = 'Tie';
-    } else if (playerScore.textContent === '5' ) {
+    } else if (playerScore.textContent === '5') {
         announceFinalWinner.innerHTML = 'You win! <img src="./images/happy.png">';
-
+        playWinAudio();
     } else if (computerScore.textContent === '5') {
         announceFinalWinner.innerHTML = 'Computer wins <img src="./images/sad.png">';
+        playLoseAudio();
     } else {
         return;
     }
@@ -113,13 +131,9 @@ function playRound() {
     finalWinner();
 }
 
-function playButtonSound () {
-    const buttonAudio = document.getElementById("click-button-audio");
-    buttonAudio.currentTime = 0;
-    buttonAudio.play();
-}
+
 
 const buttons = document.querySelectorAll('.options > button');
 buttons.forEach(button => button.addEventListener('click', playRound));
-buttons.forEach(button => button.addEventListener('click', playButtonSound));
+buttons.forEach(button => button.addEventListener('click', playButtonAudio));
 
