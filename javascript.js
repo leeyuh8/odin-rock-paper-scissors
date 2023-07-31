@@ -18,8 +18,9 @@ const announceFinalWinner = document.createElement('h1');
 const playAgainButton = document.createElement('button');
     playAgainButton.textContent = "Play Again";
     playAgainButton.setAttribute('id', 'play-again-button');
+    // playAgainButton.addEventListener('click', playButtonSound);
     playAgainButton.addEventListener('click', () => window.location.reload());
-
+    
 
 
 function getPlayerSelection (button) {
@@ -92,6 +93,7 @@ function finalWinner () {
         announceFinalWinner.textContent = 'Tie';
     } else if (playerScore.textContent === '5' ) {
         announceFinalWinner.innerHTML = 'You win! <img src="./images/happy.png">';
+
     } else if (computerScore.textContent === '5') {
         announceFinalWinner.innerHTML = 'Computer wins <img src="./images/sad.png">';
     } else {
@@ -111,5 +113,13 @@ function playRound() {
     finalWinner();
 }
 
+function playButtonSound () {
+    const buttonAudio = document.getElementById("click-button-audio");
+    buttonAudio.currentTime = 0;
+    buttonAudio.play();
+}
+
 const buttons = document.querySelectorAll('.options > button');
 buttons.forEach(button => button.addEventListener('click', playRound));
+buttons.forEach(button => button.addEventListener('click', playButtonSound));
+
