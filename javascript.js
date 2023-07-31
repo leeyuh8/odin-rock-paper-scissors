@@ -107,19 +107,8 @@ function finalWinner () {
 function playRound() {
     getPlayerSelection(this);
     getComputerSelection();
-
     displayWinnerOfRound();
-    
     finalWinner();
-}
-
-function resetScore(buttonReset) {
-    buttons.forEach(button => button.addEventListener('click', playRound));
-    
-    roundResult.textContent = '';
-    playerScore.textContent = '';
-    computerScore.textContent = '';
-    h1Winner.textContent = '';
 }
 
 const buttons = document.querySelectorAll('.options > button');
