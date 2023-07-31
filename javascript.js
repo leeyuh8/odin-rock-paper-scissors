@@ -18,7 +18,6 @@ const announceFinalWinner = document.createElement('h1');
 const playAgainButton = document.createElement('button');
     playAgainButton.textContent = "Play Again";
     playAgainButton.setAttribute('id', 'play-again-button');
-    // playAgainButton.addEventListener('click', playButtonAudio);
     playAgainButton.addEventListener('click', () => window.location.reload());
  
     
