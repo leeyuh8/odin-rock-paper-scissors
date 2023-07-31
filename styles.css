@@ -103,7 +103,7 @@ img {
 .options button:hover {
     opacity: 1;
     transform: translateY(-5px);
-    box-shadow: 0 10px 10px #0f335e;
+    box-shadow: 0 10px 10px #010a14;
 }
 
 button img {

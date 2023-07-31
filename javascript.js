@@ -18,6 +18,7 @@ const announceFinalWinner = document.createElement('h1');
 const playAgainButton = document.createElement('button');
     playAgainButton.textContent = "Play Again";
     playAgainButton.setAttribute('id', 'play-again-button');
+    playAgainButton.addEventListener('click', () => window.location.reload());
 
 
 
@@ -92,7 +93,7 @@ function finalWinner () {
     } else if (playerScore.textContent === '5' ) {
         announceFinalWinner.innerHTML = 'You win! <img src="./images/happy.png">';
     } else if (computerScore.textContent === '5') {
-        announceFinalWinner.innerHTML = 'Computer wins! <img src="./images/sad.png">';
+        announceFinalWinner.innerHTML = 'Computer wins <img src="./images/sad.png">';
     } else {
         return;
     }
@@ -101,30 +102,6 @@ function finalWinner () {
     optionsDiv.textContent = "";
     optionsDiv.appendChild(announceFinalWinner);
     optionsDiv.appendChild(playAgainButton);
- return;
-   
-   
-    
-    /* check to see if player or computer score is 5
-        - remove text content of .options
-        - create new div with .game-end-winner that contains:
-            - h1 tag to announce the overall winner
-            - 'play again' button
-        - append new div to .options
-
-*/
-   
-
-/* if h1 winner contains any text, then the game has completed.
-        - stop player option buttons from being clicked
-        - when reset button clicked, run resetGame function to reset scores.
-*/
-    if (h1Winner.textContent === 'Tie' 
-        || h1Winner.textContent === 'You win!'
-        || h1Winner.textContent === 'Computer wins!') {
-            buttons.forEach(button => button.removeEventListener('click', playRound));
-            buttonReset.addEventListener('click', resetScore);
-        }
 }
 
 function playRound() {
