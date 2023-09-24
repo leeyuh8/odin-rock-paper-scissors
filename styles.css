@@ -116,9 +116,19 @@ button img {
 /* FOOTER */
 footer { 
    padding-bottom: 5px;
-   color:#456994;
+   color:lightgrey;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a > img {
+    height: 20px;
+    width: auto;
+    padding-left: 3px;
+}
 
 
 /* END OF GAME CARD STYLES */
