@@ -1,13 +1,13 @@
-# odin-rock-paper-scissors
+# Rock-Paper-Scissors
+[Live Demo](https://leeyuh8.github.io/rock-paper-scissors/)
 
-Purpose: Use Javascript language to simulate a rock-paper-scissors game through the browser console.
+## Purpose: 
+To practice using Javascript to create a rock-paper-scissors game between the user and the computer.
 
-Skills Used:
-  - Problem solving methods: understanding problem, breaking it down into subproblems, writing psuedocode.
-  - Using Chrome Dev Tools to debug.
-  - Writing for loops, if/else statements, declaring global and local variables, and switch statements.
-  - Working with branches.
-  - Manipulating and adding events to the DOM with JS.
+## Skills:
+- Problem solving methods: understanding problem, breaking it down into subproblems, writing psuedocode.
+- Using Chrome Dev Tools to debug.
+- Writing for loops, if/else statements, declaring global and local variables, and switch statements.
+- Working with branches.
+- Manipulating and adding events to the DOM with JS.
 
-  Lessons Learned:
-  - Declare variables used in multiple functions in the global scope.
