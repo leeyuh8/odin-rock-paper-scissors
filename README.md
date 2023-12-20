@@ -1,5 +1,5 @@
 # Rock-Paper-Scissors
-[Live Demo](https://leeyuh8.github.io/rock-paper-scissors/)
+[Live Demo](https://strallia.github.io/rock-paper-scissors/)
 
 ## Purpose: 
 To practice using Javascript to create a rock-paper-scissors game between the user and the computer.
